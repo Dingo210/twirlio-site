@@ -53,6 +53,19 @@ section{padding:44px 0}
 h2{font-family:var(--rounded);font-weight:800;font-size:clamp(26px,4vw,38px);line-height:1.08;letter-spacing:-.015em;text-align:center;margin:0 auto 14px;max-width:18ch;text-wrap:balance}
 .lead{color:var(--ink-soft);font-size:17px;max-width:56ch;margin:0 auto;text-align:center;text-wrap:pretty}
 
+/* screenshots */
+.shots{display:flex;flex-wrap:wrap;justify-content:center;gap:44px 56px;margin-top:38px}
+.shots figure{margin:0;flex:0 1 300px;min-width:0;max-width:310px;display:flex;flex-direction:column;align-items:center}
+.shots img{
+  display:block;width:100%;height:auto;
+  border-radius:30px;border:1px solid var(--hair);
+  box-shadow:var(--shadow);
+  background:var(--bg-top);
+}
+.shots figcaption{margin-top:18px;color:var(--ink-soft);font-size:14.5px;text-align:center;text-wrap:pretty;max-width:34ch}
+.shots figcaption strong{color:var(--ink);font-family:var(--rounded);font-weight:800;display:block;margin-bottom:3px}
+@media(max-width:520px){.shots{gap:38px}.shots figure{flex-basis:250px}}
+
 /* feature grid */
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
 @media(max-width:820px){.features{grid-template-columns:repeat(2,1fr)}}
