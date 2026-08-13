@@ -7,11 +7,48 @@
   <meta name="description" content="Twirlio is a calm, ad-free box of spinning toys for toddlers and preschoolers. Flick a pinwheel, mesh wooden cogs, wobble a spinning top — quiet, unhurried sensory play with no ads and nothing to sign up for." />
   <meta property="og:title" content="Twirlio — calm spinning toys for little hands" />
   <meta property="og:description" content="Pinwheels, gears and spinning tops that answer every touch. Calm, ad-free sensory play for little hands." />
-  <meta property="og:image" content="icon.png" />
+  <!-- Absolute, and it must stay absolute: a relative og:image is silently
+       ignored by every scraper, which is why link previews were rendering
+       with no picture at all in Messages, Slack and everywhere else. -->
+  <meta property="og:image" content="https://www.playtwirlio.com/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Five colorful paper pinwheels on a warm off-white background." />
+  <meta property="og:url" content="https://www.playtwirlio.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Twirlio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twirlio — calm spinning toys for little hands" />
+  <meta name="twitter:description" content="Pinwheels, gears and spinning tops that answer every touch. Calm, ad-free sensory play for little hands." />
+  <meta name="twitter:image" content="https://www.playtwirlio.com/og-cover.png" />
+  <!-- The apex 308s to www, so www is the canonical host. Without this the two
+       can be treated as separate sites and the ranking signals get split. -->
+  <link rel="canonical" href="https://www.playtwirlio.com/" />
   <meta name="theme-color" content="#FCFAF5" />
   <link rel="icon" href="icon.png" />
   <link rel="apple-touch-icon" href="icon.png" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Twirlio",
+    "description": "A calm, ad-free playroom of spinning toys for toddlers and preschoolers — pinwheels, meshing wooden cogs and spinning tops. No ads, no tracking, no subscription.",
+    "applicationCategory": "GameApplication",
+    "applicationSubCategory": "Kids",
+    "operatingSystem": "iOS 17.0 or later",
+    "url": "https://www.playtwirlio.com/",
+    "image": "https://www.playtwirlio.com/og-cover.png",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free to download. One optional in-app purchase unlocks every toy."
+    },
+    "author": { "@type": "Person", "name": "Eric Domingo" }
+  }
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -29,9 +66,15 @@
 
     <header class="hero">
       <div class="fanhost" data-color="#3D7CC4" data-size="188" data-dur="7"></div>
-      <h1 class="wordmark hero" aria-label="Twirlio">
+      <!-- The wordmark is a picture of the name, letter by letter, so as an h1
+           it gave the page no descriptive heading at all — search engines saw
+           "Twirlio" and nothing about what it is. The real h1 now carries the
+           description and is hidden visually, and the lettering is marked
+           decorative so screen readers hear the heading once, not twice. -->
+      <h1 class="sr-only">Twirlio — calm spinning toys for little hands</h1>
+      <div class="wordmark hero" aria-hidden="true">
         <span style="transform:rotate(-7deg) translateY(2px)">T</span><span style="transform:rotate(5deg) translateY(-5px)">w</span><span style="transform:rotate(-4deg) translateY(3px)">i</span><span style="transform:rotate(6deg) translateY(-3px)">r</span><span style="transform:rotate(-5deg) translateY(5px)">l</span><span style="transform:rotate(4deg) translateY(-3px)">i</span><span style="transform:rotate(-6deg) translateY(2px)">o</span>
-      </h1>
+      </div>
       <p class="tagline">Tap. Twirl. Giggle.</p>
       <p class="dek">A calm, ad-free playroom of spinning toys — flick a pinwheel, mesh a set of wooden cogs, send a top wobbling. Everything answers, nothing hurries.</p>
       <span class="badge"><span class="dot"></span>Coming soon to the App Store</span>
